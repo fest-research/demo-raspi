@@ -12,6 +12,7 @@ spec:
         app: iot-packing-app
         name: iot-packing-app
     spec:
+      hostNetwork: true
       containers:
         - name: iot-packing-app
           securityContext:
