@@ -17,11 +17,6 @@ after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push fest/rpi-packing-demo;
+    docker run --rm -v `pwd`/assets:/config:rw lachlanevenson/k8s-kubectl --kubeconfig /config/default-kubeconfig.yaml create -f /config/packing-daemonset.yaml;
     docker run --rm -v `pwd`/assets:/config:rw lachlanevenson/k8s-kubectl --kubeconfig /config/default-kubeconfig.yaml replace -f /config/packing-daemonset.yaml;
-    if [ $? -eq 0 ]; then
-        echo OK
-    else
-        echo "Will create missing iot-daemonset"
-        docker run --rm -v `pwd`/assets:/config:rw lachlanevenson/k8s-kubectl --kubeconfig /config/default-kubeconfig.yaml create -f /config/packing-daemonset.yaml;
-    fi
     fi
