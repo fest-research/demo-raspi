@@ -27,6 +27,7 @@ try:
             GPIO.output(Desk[gruen], False)
             orderId = random.randint(1000000, 9000000)
             message = "Order%20" + str(orderId) + "%20shipped"
+            print("Sending msg: {}".format(cloudUrl + message))
             urllib2.urlopen(cloudUrl + message).read()
 
 

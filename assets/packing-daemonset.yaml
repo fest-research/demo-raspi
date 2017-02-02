@@ -1,0 +1,37 @@
+apiVersion: "fujitsu.com/v1"
+kind: IotDaemonSet
+metadata:
+  name: iot-packing-app
+  namespace: default
+  labels:
+    deviceSelector: "all"
+spec:
+  template:
+    metadata:
+      labels:
+        app: iot-packing-app
+        name: iot-packing-app
+    spec:
+      containers:
+        - name: iot-packing-app
+          securityContext:
+            privileged: true
+          image: fest/rpi-packing-demo
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /sys/class/gpio
+              name:      sys-class-gpio
+            - mountPath: /sys/devices
+              name:      sys-devices
+            - mountPath: /sys/bus
+              name:      sys-bus
+      volumes:
+        - name:     sys-class-gpio
+          hostPath:
+            path:   /sys/class/gpio
+        - name:     sys-devices
+          hostPath:
+            path:   /sys/devices
+        - name:     sys-bus
+          hostPath:
+            path:   /sys/bus
