@@ -23,7 +23,7 @@ try:
             time.sleep(10)
             GPIO.output(Desk[gruen], True)
             GPIO.output(Desk[rot], False)
-            time.sleep(5)
+            time.sleep(15)
             GPIO.output(Desk[gruen], False)
             orderId = random.randint(1000000, 9000000)
             message = "Order%20" + str(orderId) + "%20shipped"
