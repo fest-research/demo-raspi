@@ -20,7 +20,7 @@ try:
     while True:
         if GPIO.input(Desk[taster]):
             GPIO.output(Desk[rot], True)
-            time.sleep(1)
+            time.sleep(10)
             GPIO.output(Desk[gruen], True)
             GPIO.output(Desk[rot], False)
             time.sleep(2)
@@ -29,6 +29,8 @@ try:
             message = "Order%20" + str(orderId) + "%20shipped"
             print("Sending msg: {}".format(cloudUrl + message))
             urllib2.urlopen(cloudUrl + message).read()
+	else:
+	    time.sleep(0.1)
 
 
 except KeyboardInterrupt:
