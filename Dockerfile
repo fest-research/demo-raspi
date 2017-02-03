@@ -1,12 +1,13 @@
-FROM resin/rpi-raspbian:wheezy
+FROM fest/rpi-python-gpio
 
-# Install dependencies
 RUN apt-get update && apt-get install -y \
     python \
     python-dev \
-    python-rpi.gpio \
+    python-pip \
+    python-virtualenv \
     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
+
 
 COPY src/packingdesk.py /usr/bin/packingdesk.py
 
