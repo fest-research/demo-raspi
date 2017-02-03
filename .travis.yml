@@ -11,13 +11,11 @@ services:
 install: true
 
 script:
-  - docker build -t fest/rpi-packing-demo:v0.1 .
+  - docker build -t fest/rpi-packing-demo:v0.22 .
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push fest/rpi-packing-demo:v0.1;
-    docker run --rm -v `pwd`/assets:/config:rw lachlanevenson/k8s-kubectl --kubeconfig /config/default-kubeconfig.yaml delete -f /config/packing-daemonset.yaml;
-    sleep 4;
-    docker run --rm -v `pwd`/assets:/config:rw lachlanevenson/k8s-kubectl --kubeconfig /config/default-kubeconfig.yaml create -f /config/packing-daemonset.yaml;
+    docker push fest/rpi-packing-demo:v0.2;
+    docker run --rm -v `pwd`/assets:/config:rw lachlanevenson/k8s-kubectl --kubeconfig /config/default-kubeconfig.yaml replace -f /config/packing-daemonset.yaml;
     fi
