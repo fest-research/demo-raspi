@@ -21,7 +21,7 @@ spec:
         - name: packing-demo
           securityContext:
             privileged: true
-          image: fest/rpi-packing-demo
+          image: fest/rpi-packing-demo:v0.3
           imagePullPolicy: Always
           volumeMounts:
             - mountPath: /sys/class/gpio
