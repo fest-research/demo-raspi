@@ -1,4 +1,4 @@
-FROM fest/rpi-python-gpio
+FROM fest/rpi-python-gpio-min
 
 
 COPY src/packingdesk.py /usr/bin/packingdesk.py
