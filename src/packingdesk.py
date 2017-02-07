@@ -20,7 +20,7 @@ try:
     while True:
         if GPIO.input(Desk[taster]):
             GPIO.output(Desk[rot], True)
-            time.sleep(1)
+            time.sleep(10)
             GPIO.output(Desk[gruen], True)
             GPIO.output(Desk[rot], False)
             time.sleep(2)
