@@ -6,6 +6,8 @@ Demo iot application that simulates a logistics packing desk
 
 ### Deploy to Kubernetes
 
+Execute the following command against the Kubernetes API server. The demo application will be deployed automatically on all RaspberryPI devices
+
 ```shell
 $ kubectl create -f https://raw.githubusercontent.com/fest-research/demo-raspi/master/assets/packing-daemonset.yaml
 ```
