@@ -15,9 +15,9 @@ $ kubectl create -f https://raw.githubusercontent.com/fest-research/demo-raspi/m
 SSH into the Raspberry. Run the follwoing commands
 
 ```shell
-sudo apt-get update 
-sudo apt-get install python python-dev python-rpi.gpio
-python src/packingdesk.py 
+$ sudo apt-get update 
+$ sudo apt-get install python python-dev python-rpi.gpio
+$ python src/packingdesk.py 
 ```
 
 
