@@ -14,7 +14,7 @@ Desk = [18, 23, 25]
 GPIO.setup(Desk[rot], GPIO.OUT, initial=False)
 GPIO.setup(Desk[gruen], GPIO.OUT, initial=False)
 GPIO.setup(Desk[taster], GPIO.IN)
-print("starting")
+print("startingdemo app ")
 
 try:
     while True:
