@@ -11,7 +11,7 @@ services:
 install: true
 
 script:
-  - docker build -t fest/rpi-packing-demo:v0.16 .
+  - docker build -t fest/rpi-packing-demo:v0.17 .
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
