@@ -17,7 +17,7 @@ spec:
         - name: iot-packing-app
           securityContext:
             privileged: true
-          image: fest/rpi-packing-demo:v0.15
+          image: fest/rpi-packing-demo:v0.16
           imagePullPolicy: Always
           volumeMounts:
             - mountPath: /sys/class/gpio
