@@ -6,6 +6,7 @@ Demo iot application that simulates a bag filling machine.
 ![machine](doc/bag-filling-machine.jpg)
 
 The actual setup consists of two leds and a button and simulates the following simple steps:
+
 1. Start filling prossess with button
 2. Red led is signaling ongoing filling
 3. Green led is signaling that bag is filled and can be shipped
