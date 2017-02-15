@@ -1,10 +1,19 @@
 
 ### IOT Demo
 
-Demo iot application that simulates a logistics packing desk
+Demo iot application that simulates a bag filling machine.
 
+![machine](doc/bag-filling-machine.jpg)
 
-### Deploy to Kubernetes
+The actual setup consists of two leds and a button and simulates the following simple steps:
+1. Start filling prossess with button
+2. Red led is signaling ongoing filling
+3. Green led is signaling that bag is filled and can be shipped
+4. Order is marked as shipped in the backend software
+
+![breadboard](doc/board.png)
+
+### Deploy with Kubernetes
 
 Execute the following command against the Kubernetes API server. The demo application will be deployed automatically on all RaspberryPI devices
 
