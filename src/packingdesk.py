@@ -4,7 +4,7 @@ import time
 import urllib2
 import random
 
-cloudUrl = "http://104.155.11.172:8080/api/v1/proxy/namespaces/default/services/demo/push/"
+cloudUrl = "http://35.187.21.121:8080/api/v1/proxy/namespaces/default/services/demo/push/"
 
 GPIO.setmode(GPIO.BCM)
 rot = 0
