@@ -14,6 +14,8 @@ The actual setup consists of two leds and a button and simulates the following s
 
 ![breadboard](doc/board.png)
 
+Backend part can be found [here](https://github.com/fest-research/demo)
+
 ### Deploy with Kubernetes
 
 Execute the following command against the Kubernetes API server. The demo application will be deployed automatically on all RaspberryPI devices
